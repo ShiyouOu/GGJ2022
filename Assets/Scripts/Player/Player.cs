@@ -22,9 +22,13 @@ public class Player : MonoBehaviour
     private bool _plrAlive = true;
     private FacingDirection _plrDirection = FacingDirection.Down;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
         _plrStats = new Stats(startHealth);
         PlayerHealthbar.instance.UpdateHealth();
     }

@@ -13,10 +13,10 @@ public class PlayerHealthbar : MonoBehaviour
     private List<GameObject> hearts;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        hearts = new List<GameObject>();
         instance = this;
+        hearts = new List<GameObject>();
     }
 
     // Clears the heath bar UI

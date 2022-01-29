@@ -67,4 +67,9 @@ public class Player : MonoBehaviour
     {
         return _plrStats.currentHP;
     }
+    public void HealPlayer(int numHealth)
+    {
+        _plrStats.currentHP += numHealth;
+        PlayerHealthbar.instance.UpdateHealth();
+    }
 }

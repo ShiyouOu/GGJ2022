@@ -17,6 +17,9 @@ public class RoomInfo : MonoBehaviour
 
     private void Update()
     {
+        // Dont allow player to leave room if enemies are alive
+        BasicEnemy enemyFound = gameObject.GetComponentInChildren<BasicEnemy>();
+        if (enemyFound) { return; }
         foreach(DoorInfo door in doors)
         {
             if (CheckHit(door.door))

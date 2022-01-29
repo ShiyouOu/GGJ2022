@@ -18,8 +18,8 @@ TagManager:
   - Enemy
   - FlyingEnemy
   - Projectile
-  - 
-  - 
+  - Tile
+  - NoRender
   - 
   - 
   - 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private int damage = 10;
+    [SerializeField] private int maxEnemiesHit = 2;
+    private int enemiesHit = 0; 
 
     private Collider2D _collider;
     
@@ -25,6 +27,7 @@ public class Projectile : MonoBehaviour
     {
         Collider2D[] results = new Collider2D[5];
         _collider.OverlapCollider(new ContactFilter2D(), results);
+        bool hitObs = false; 
 
         foreach (Collider2D collider in results)
         {
@@ -33,7 +36,21 @@ public class Projectile : MonoBehaviour
             if (dmgAble != null)
             {
                 dmgAble.TakeDamage(damage);
+                enemiesHit ++; 
+                if (enemiesHit >= maxEnemiesHit)
+                {
+                    Destroy(gameObject);
+                    break;
+                }
             }
+            else if (collider.gameObject.layer == 6 || collider.gameObject.layer == 7)
+            {
+                hitObs = true;
+            }
+        }
+        if (hitObs)
+        {
+            Destroy(gameObject);
         }
     }
 }

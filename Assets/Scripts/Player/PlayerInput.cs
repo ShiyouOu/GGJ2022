@@ -14,10 +14,13 @@ public class PlayerInput : MonoBehaviour
     private float _timeSinceLastProjectile = 0f;
     private Vector2 _moveDir;
     private Vector2 _faceDir;
+    private Vector2 _lastFaceDir;
 
     // Start is called before the first frame update
     void Start()
     {
+        _faceDir = new Vector2(0,0);
+        _lastFaceDir = new Vector2(0, -1);
     }
 
     // Update is called once per frame
@@ -53,6 +56,27 @@ public class PlayerInput : MonoBehaviour
     {
         Vector2 inputVec = input.Get<Vector2>();
         _faceDir = new Vector2(inputVec.x, inputVec.y);
+        if (_faceDir != Vector2.zero)
+        {
+            _lastFaceDir = _faceDir;
+        }
+    }
+
+    public void OnShove()
+    {
+        Collider2D[] results = new Collider2D[5];
+        Physics2D.OverlapBox(transform.position, new Vector2(5f,5f), 0f, new ContactFilter2D(), results);
+        foreach (Collider2D collider in results)
+        {
+            if (collider == null)
+            {
+                break;
+            }
+            if (collider.gameObject.GetComponent<BasicEnemy>())
+            {
+                collider.gameObject.GetComponent<Rigidbody2D>().AddForce(_lastFaceDir  * 5000);
+            }
+        }
     }
 
     public void OnMove(InputValue input)
@@ -60,6 +84,7 @@ public class PlayerInput : MonoBehaviour
         Vector2 inputVec = input.Get<Vector2>();
 
         _moveDir = new Vector2(inputVec.x, inputVec.y);
+       
     }
 
 

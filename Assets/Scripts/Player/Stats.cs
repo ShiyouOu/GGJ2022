@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stats
 {
     private int _maxHP = 100;
-    private float _currentHP = 100;
+    private int _currentHP = 100;
     private int _armor = 0;
 
     // Getters and Setters
@@ -20,7 +20,7 @@ public class Stats
             _maxHP = value;
         }
     }
-    public float currentHP
+    public int currentHP
     {
         get
         {

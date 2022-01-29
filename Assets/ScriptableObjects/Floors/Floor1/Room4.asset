@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 797b2c399b4d2a3498d3cd30300ad68a, type: 3}
-  m_Name: Room3
+  m_Name: Room4
   m_EditorClassIdentifier: 
-  template: {fileID: 11400000, guid: 9bd2acf1e7f97414b8cd75b335aa81fe, type: 2}
+  template: {fileID: 11400000, guid: 0899138e673f98c46aeae78dd805b735, type: 2}
   links:
   - direction: 1
-    floorRoom: {fileID: 11400000, guid: cb4ac062b580d444bb4733a33696e5ab, type: 2}
-  - direction: 0
-    floorRoom: {fileID: 11400000, guid: e070e226ff112224cb9dba8291756611, type: 2}
+    floorRoom: {fileID: 11400000, guid: 9e98f9bb0698bbf4789141847b083254, type: 2}

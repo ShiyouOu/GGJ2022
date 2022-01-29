@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39fff82c08636ca4191252c3cb244b7d, type: 3}
-  m_Name: Room1
+  m_Script: {fileID: 11500000, guid: 797b2c399b4d2a3498d3cd30300ad68a, type: 3}
+  m_Name: Room2
   m_EditorClassIdentifier: 
-  roomPrefab: {fileID: 6493504272990796955, guid: d39e51d3aa684da42aaec7de178da461, type: 3}
   template: {fileID: 11400000, guid: 9bd2acf1e7f97414b8cd75b335aa81fe, type: 2}
+  links:
+  - direction: 0
+    floorRoom: {fileID: 11400000, guid: 9e98f9bb0698bbf4789141847b083254, type: 2}
+  - direction: 1
+    floorRoom: {fileID: 11400000, guid: 6a59105c5a4cc6e4db7605c742573387, type: 2}

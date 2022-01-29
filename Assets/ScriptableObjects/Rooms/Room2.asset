@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: Room2
   m_EditorClassIdentifier: 
   roomPrefab: {fileID: 8214016611934226072, guid: fbc41c73c13d56b4cbf7f32628b00522, type: 3}
-  roomType: 4
-  doors:
-  - direction: 1
+  template: {fileID: 11400000, guid: 9bd2acf1e7f97414b8cd75b335aa81fe, type: 2}

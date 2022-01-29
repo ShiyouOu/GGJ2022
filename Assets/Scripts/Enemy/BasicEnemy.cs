@@ -8,6 +8,8 @@ public class BasicEnemy : MonoBehaviour, IDamageable
     [SerializeField] private float speed;
     [SerializeField] private int baseDamage;
     [SerializeField] private int health;
+    [SerializeField] private float aggroDelay = 1f;
+    [SerializeField] private float timeDelayed = 0f;
 
     private Rigidbody2D _rb;
     private Collider2D _collider;
@@ -15,6 +17,10 @@ public class BasicEnemy : MonoBehaviour, IDamageable
     private Vector3 _spawnLocation;
     private float locationOffset = 0.02f;
 
+    private void OnEnable()
+    {
+        timeDelayed = 0f;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +48,9 @@ public class BasicEnemy : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
+        timeDelayed += Time.deltaTime;
+        if (timeDelayed < aggroDelay) { return; }
+
         if (target)
         {
             MoveToLocation(target.transform.position);

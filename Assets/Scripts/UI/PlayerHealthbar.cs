@@ -17,7 +17,6 @@ public class PlayerHealthbar : MonoBehaviour
     {
         hearts = new List<GameObject>();
         instance = this;
-        UpdateHealth();
     }
 
     // Clears the heath bar UI

@@ -6,25 +6,24 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody2D _rb;
 
-    private float _horizontal;
-    private float _vertical;
-    private float _moveLimiter = 0.7f;
+    private PlayerInput _plrInput;
 
     [SerializeField] private float moveSpeed = 20.0f;
 
     void Start()
     {
+        _plrInput = GetComponent<PlayerInput>();
         _rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        _horizontal = Input.GetAxisRaw("Horizontal");
-        _vertical = Input.GetAxisRaw("Vertical");
+
     }
 
     void FixedUpdate()
     {
-        _rb.velocity = new Vector2(_horizontal, _vertical).normalized * moveSpeed;
+        Vector2 moveDir = _plrInput.GetMoveDir();
+        _rb.velocity = new Vector2(moveDir.x, moveDir.y).normalized * moveSpeed;
     }
 }

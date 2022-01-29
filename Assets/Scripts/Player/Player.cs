@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     {
         instance = this;
         _plrStats = new Stats(startHealth);
+        PlayerHealthbar.instance.UpdateHealth();
     }
 
     private void Update()
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
             _plrStats.currentHP = 0;
             _plrAlive = false;
             //deathScreen.SetActive(true);
-            print("Player is Dead");
+            Destroy(gameObject);
         }
         else
         {

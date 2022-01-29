@@ -12,6 +12,8 @@ public class BasicEnemy : MonoBehaviour, IDamageable
     private Rigidbody2D _rb;
     private Collider2D _collider;
     private Stats _stats;
+    private Vector3 _spawnLocation;
+    private float locationOffset = 0.02f;
 
 
     // Start is called before the first frame update
@@ -21,14 +23,34 @@ public class BasicEnemy : MonoBehaviour, IDamageable
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
         _stats = new Stats(health);
+        _spawnLocation = transform.position;
+    }
+
+    private void MoveToLocation(Vector3 pos)
+    {  
+        if((transform.position - pos).magnitude >= locationOffset)
+        {
+            Vector2 velocity = new Vector2((transform.position.x - pos.x), (transform.position.y - pos.y)).normalized * speed;
+            _rb.velocity = -velocity;
+        }
+        else
+        {
+            _rb.velocity = Vector2.zero;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 velocity = new Vector2((transform.position.x - target.transform.position.x), (transform.position.y - target.transform.position.y)).normalized * speed;
-        _rb.velocity = -velocity;
-        CheckHit();
+        if (target)
+        {
+            MoveToLocation(target.transform.position);
+            CheckHit();
+        }
+        else
+        {
+            MoveToLocation(_spawnLocation);
+        }
     }
 
     public void TakeDamage(int dmg)
@@ -39,7 +61,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
         if (dmg >= _stats.currentHP)
         {
             _stats.currentHP = 0;
-            print("enemy is dead");
+            Destroy(gameObject);
         }
         else
         {

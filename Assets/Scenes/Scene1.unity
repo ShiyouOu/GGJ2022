@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _floors:
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
+  - {fileID: 11400000, guid: b224220df921d2844ab0f9b4d23b32cf, type: 2}
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
   _roomsPool:
   - {fileID: 11400000, guid: 5e28189765e3a7842875af0c543781d5, type: 2}
@@ -1102,6 +1102,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c766100f28aaf894a9c0adbdab30b710, type: 2}
   - {fileID: 11400000, guid: 0d996057e5b3a3847834c66441526a68, type: 2}
   - {fileID: 11400000, guid: c6127feb86345244190d210c20ce28aa, type: 2}
+  - {fileID: 11400000, guid: 7e8ced4c81f673742a47df5ee3932653, type: 2}
+  - {fileID: 11400000, guid: 107e4327883441b49855c147176c9fab, type: 2}
+  - {fileID: 11400000, guid: 177ff24aaf8598b4896f03f43c1013c4, type: 2}
+  - {fileID: 11400000, guid: a9bb97094ea325047b14085269d652fe, type: 2}
+  - {fileID: 11400000, guid: e1df459839770924fb4307a04f1e4504, type: 2}
+  - {fileID: 11400000, guid: 9f462464fc3587b48a2fa82d2a234ff9, type: 2}
+  - {fileID: 11400000, guid: b4870d56466d8ac489197bb8c710a9f7, type: 2}
+  - {fileID: 11400000, guid: cc835795dca54044994f87d81869584b, type: 2}
   _nextLevelScreen: {fileID: 336383369}
   _levelLabel: {fileID: 804620194}
   EnvironmentGroup: {fileID: 205971690}

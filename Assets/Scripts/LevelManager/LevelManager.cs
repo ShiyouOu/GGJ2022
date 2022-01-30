@@ -152,7 +152,10 @@ public class LevelManager : MonoBehaviour
         }
         // Set the main floor to active
         _roomsClone[0].SetActive(true);
-        Player.instance.RespawnPlayer();
+        if(_currentFloorLevel == 0)
+        {
+            Player.instance.RespawnPlayer();
+        }
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 0, 12);
         _currentRoomIndex = 0;
         _levelLabel.SetText("Level: " + (_currentFloorLevel + 1));
@@ -170,6 +173,11 @@ public class LevelManager : MonoBehaviour
         {
             LoadFloor();
         }
+    }
+
+    public void SetFloorLevel(int num)
+    {
+        _currentFloorLevel = num;
     }
 
     private void Awake()

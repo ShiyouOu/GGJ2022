@@ -164,7 +164,7 @@ MonoBehaviour:
       minAmount: 1
       maxAmount: 1
       chanceNum: 1
-      chanceDenom: 1
+      chanceDenom: 3
 --- !u!1 &2055102312182832482
 GameObject:
   m_ObjectHideFlags: 0

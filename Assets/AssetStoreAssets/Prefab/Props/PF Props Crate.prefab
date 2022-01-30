@@ -241,4 +241,4 @@ MonoBehaviour:
       minAmount: 1
       maxAmount: 1
       chanceNum: 1
-      chanceDenom: 1
+      chanceDenom: 2

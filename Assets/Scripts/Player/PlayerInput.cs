@@ -47,6 +47,10 @@ public class PlayerInput : MonoBehaviour
     public void LowerCooldown(float cooldown)
     {
         attackCooldown -= cooldown;
+        if(attackCooldown <= 0)
+        {
+            attackCooldown = 0.1f;
+        }
     }
 
     public void AddCooldown(float cooldown)

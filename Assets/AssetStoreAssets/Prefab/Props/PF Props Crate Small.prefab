@@ -159,7 +159,7 @@ MonoBehaviour:
       minAmount: 1
       maxAmount: 1
       chanceNum: 1
-      chanceDenom: 1
+      chanceDenom: 2
 --- !u!1 &8150476868737220289
 GameObject:
   m_ObjectHideFlags: 0

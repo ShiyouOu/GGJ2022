@@ -164,7 +164,7 @@ public class LevelManager : MonoBehaviour
     public void NextFloor()
     {
         _nextLevelScreen.SetActive(false);
-        if (_currentFloorLevel <= _floors.Count)
+        if (_currentFloorLevel < _floors.Count-1)
         {
             _currentFloorLevel++;
             LoadFloor();

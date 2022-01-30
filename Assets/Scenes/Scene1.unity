@@ -1090,10 +1090,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
   _roomsPool:
   - {fileID: 11400000, guid: 5e28189765e3a7842875af0c543781d5, type: 2}
   - {fileID: 11400000, guid: a10f15e68b3f65a4d8c4074b1b97b671, type: 2}

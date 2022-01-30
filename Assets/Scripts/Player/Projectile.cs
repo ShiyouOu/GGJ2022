@@ -53,4 +53,9 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetDamage(int dmg)
+    {
+        damage = dmg;
+    }
 }

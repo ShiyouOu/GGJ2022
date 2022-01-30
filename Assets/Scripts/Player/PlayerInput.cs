@@ -5,9 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    public float attackCooldown = 0.3f;
+
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectileDespawnTime = 2f;
-    [SerializeField] private float attackCooldown = 0.3f;
     [SerializeField] private float minProjectileVelocity = 400;
     [SerializeField] private float maxProjectileVelocity = 500;
 
@@ -36,6 +37,14 @@ public class PlayerInput : MonoBehaviour
             }
         }
     }
+    public void LowerCooldown(float cooldown)
+    {
+        attackCooldown -= cooldown;
+    }
+    public void AddCooldown(float cooldown)
+    {
+
+    }
 
     public Vector3 GetMoveDir()
     {
@@ -47,37 +56,38 @@ public class PlayerInput : MonoBehaviour
         // Create new projectile
         GameObject newProjectile = Instantiate<GameObject>(projectile);
         newProjectile.transform.position = Player.instance.transform.position;
+        newProjectile.GetComponent<Projectile>().SetDamage(Player.instance.projectileDamage);
 
         //change rotation - (-45 = right, -135 = down, 45 up, 135 left, 0 up right, 90up left, -90down right, -180 down left)
         if (_faceDir == new Vector2(0, 1))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, 45);
         }
-        if (_faceDir == new Vector2(0, -1))
+        else if (_faceDir == new Vector2(0, -1))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, -135);
         }
-        if (_faceDir == new Vector2(1, 0))
+        else if (_faceDir == new Vector2(1, 0))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, -45);
         }
-        if (_faceDir == new Vector2(-1, 0))
+        else if (_faceDir == new Vector2(-1, 0))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, 135);
         }
-        if (_faceDir == new Vector2(0.707107f, 0.707107f))
+        else if (_faceDir == new Vector2(0.707107f, 0.707107f))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, 0);
         }
-        if (_faceDir == new Vector2(-0.707107f, 0.707107f))
+        else if (_faceDir == new Vector2(-0.707107f, 0.707107f))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, 90);
         }
-        if (_faceDir == new Vector2(0.707107f, -0.707107f))
+        else if (_faceDir == new Vector2(0.707107f, -0.707107f))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, -90);
         }
-        if (_faceDir == new Vector2(-0.707107f, -0.707107f))
+        else if (_faceDir == new Vector2(-0.707107f, -0.707107f))
         {
             newProjectile.transform.eulerAngles = new Vector3(0, 0, -180);
         }

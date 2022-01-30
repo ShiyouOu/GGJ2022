@@ -13,15 +13,30 @@ public enum FacingDirection
 public class Player : MonoBehaviour
 {
     public static Player instance;
+    public int karma; 
     public bool plrAlive = true;
 
-    [SerializeField] int _startHealth;
+    [SerializeField] private int _startHealth;
     [SerializeField] private float _iframeTime = 1f;
+    [SerializeField] private int _projectileDamage = 1;
+
     [SerializeField] private GameObject _deathScreen;
     private float _timeSinceLastHit = 0f;
 
     private Stats _plrStats;
     private FacingDirection _plrDirection = FacingDirection.Down;
+
+    public int projectileDamage
+    {
+        get
+        {
+            return _projectileDamage;
+        }
+        set
+        {
+            return;
+        }
+    }
 
     private void Awake()
     {
@@ -88,6 +103,25 @@ public class Player : MonoBehaviour
     public void HealPlayer(int numHealth)
     {
         _plrStats.currentHP += numHealth;
-        PlayerHealthbar.instance.UpdateHealth();
+        PlayerHealthbar.instance.UpdateHealth();        
+    }
+  
+    public void LowerKarma(int lowerKarma)
+    {
+        karma -= lowerKarma;
+    }
+    public void AddKarma(int addKarma)
+    {
+        karma += addKarma;
+    }
+
+    public void LowerDamage(int dmg)
+    {
+        _projectileDamage -= dmg;
+    }
+
+    public void AddDamage(int dmg)
+    {
+        _projectileDamage += dmg;
     }
 }

@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hearts : MonoBehaviour
+public class RapidFire : MonoBehaviour
 {
-    [SerializeField] private int _heal = 1;
+    [SerializeField] private float _cooldownMod;
+    [SerializeField] private int _karmaMod;
     private Collider2D _collider;
 
     public void HitDetection()
@@ -18,16 +19,14 @@ public class Hearts : MonoBehaviour
             Player plr = collider.gameObject.GetComponent<Player>();
             if (plr)
             {
-                HealPlayer(_heal);
+                plr.gameObject.GetComponent<Player>().AddKarma(_karmaMod);
+                plr.gameObject.GetComponent<PlayerInput>().LowerCooldown(_cooldownMod);
+
+                Destroy(gameObject);
             }
         }
     }
-    public void HealPlayer(int heal)
-    {
-        // heal = Mathf.Clamp(_heal, 0, int.MaxValue);
-         Player.instance.HealPlayer(heal);
-         Destroy(gameObject);
-    }
+    
     // Start is called before the first frame update
     void Start()
     {

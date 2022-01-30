@@ -160,7 +160,7 @@ MonoBehaviour:
       maxAmount: 1
       chanceNum: 1
       chanceDenom: 20
-    - drop: {fileID: 6556942946149300449, guid: 1d505550b2293594a8ae89e1fa04ee07, type: 3}
+    - drop: {fileID: 5042297242120059969, guid: adc8b09a0cbfc8841af4709732235e2b, type: 3}
       minAmount: 1
       maxAmount: 1
       chanceNum: 1

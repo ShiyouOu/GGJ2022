@@ -1110,6 +1110,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f462464fc3587b48a2fa82d2a234ff9, type: 2}
   - {fileID: 11400000, guid: b4870d56466d8ac489197bb8c710a9f7, type: 2}
   - {fileID: 11400000, guid: cc835795dca54044994f87d81869584b, type: 2}
+  - {fileID: 11400000, guid: 044174f8b066a5448b509412b6a4ace6, type: 2}
+  - {fileID: 11400000, guid: a5db3fef2233b2640a15e6ee09b7a98a, type: 2}
   _nextLevelScreen: {fileID: 336383369}
   _levelLabel: {fileID: 804620194}
   EnvironmentGroup: {fileID: 205971690}

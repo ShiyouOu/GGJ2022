@@ -22,8 +22,9 @@ public class Player : MonoBehaviour
     [SerializeField] private int _projectileDamage = 1;
     [SerializeField] private TextMeshProUGUI _karmaText;
     [SerializeField] private GameObject _deathScreen;
-    private float _timeSinceLastHit = 0f;
 
+    private float _timeSinceLastHit = 0f;
+    private int _startProjectileDamage;
     private Stats _plrStats;
     private FacingDirection _plrDirection = FacingDirection.Down;
 
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
     {
         _plrStats = new Stats(_startHealth);
         PlayerHealthbar.instance.UpdateHealth();
+        _startProjectileDamage = _projectileDamage;
     }
 
     private void Update()
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour
         plrAlive = true;
         _plrStats = new Stats(_startHealth);
         karma = 0;
+        _projectileDamage = _startProjectileDamage;
         PlayerHealthbar.instance.UpdateHealth();
         _deathScreen.SetActive(false);
         Renderer[] renderers = GetComponentsInChildren<Renderer>();

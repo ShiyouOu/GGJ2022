@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public static Player instance;
     public int karma; 
     public bool plrAlive = true;
-    public AudioClip clip; 
+    //public AudioClip clip; 
 
     [SerializeField] private int _startHealth;
     [SerializeField] private float _iframeTime = 1f;
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
         else
         {
             _plrStats.currentHP -= dmg;
-            SoundManager.Instance.PlayEffect(clip, transform.position);
+            //SoundManager.Instance.PlayEffect(clip, transform.position);
         }
 
         _timeSinceLastHit = 0f;

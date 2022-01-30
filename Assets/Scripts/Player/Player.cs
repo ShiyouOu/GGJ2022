@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum FacingDirection
 {
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int _startHealth;
     [SerializeField] private float _iframeTime = 1f;
     [SerializeField] private int _projectileDamage = 1;
-
+    [SerializeField] private TextMeshProUGUI _karmaText;
     [SerializeField] private GameObject _deathScreen;
     private float _timeSinceLastHit = 0f;
 
@@ -52,6 +53,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _timeSinceLastHit += Time.deltaTime;
+    }
+
+    private void FixedUpdate()
+    {
+        _karmaText.SetText("Karma: " + karma);
     }
 
     public void RespawnPlayer()

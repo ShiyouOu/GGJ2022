@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME NAME
+  m_text: Last Knight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
   m_sharedMaterial: {fileID: 2070051119089485947, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}

@@ -6,10 +6,12 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private int damage = 10;
     [SerializeField] private int maxEnemiesHit = 2;
+    [SerializeField] private float knockbackMod = 1;
     private int enemiesHit = 0;
     private List<GameObject> hitEnemies;
 
     private Collider2D _collider;
+    private Rigidbody2D _rigidbody;
     
 
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class Projectile : MonoBehaviour
     {
         hitEnemies = new List<GameObject>();
         _collider = GetComponent<Collider2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -42,6 +45,14 @@ public class Projectile : MonoBehaviour
                 {
                     hitEnemies.Add(collider.gameObject);
                     dmgAble.TakeDamage(damage);
+                    if (collider == null)
+                    {
+                        break;
+                    }
+                    if (collider.gameObject.GetComponent<BasicEnemy>())
+                    {
+                        collider.gameObject.GetComponent<Rigidbody2D>().AddForce(_rigidbody.velocity * knockbackMod);
+                    }
                     enemiesHit++;
                     if (enemiesHit >= maxEnemiesHit)
                     {

@@ -136,3 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   maxEnemiesHit: 2
+  knockbackMod: 50

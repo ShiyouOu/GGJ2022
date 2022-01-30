@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float projectileDespawnTime = 2f;
     [SerializeField] private float minProjectileVelocity = 400;
     [SerializeField] private float maxProjectileVelocity = 500;
+    [SerializeField] private Sprite _downSprite;
+    [SerializeField] private Sprite _upSprite;
 
     private float _timeSinceLastProjectile = 0f;
     private Vector2 _moveDir;
@@ -36,6 +38,7 @@ public class PlayerInput : MonoBehaviour
                 CreateProjectile();
             }
         }
+        ChangeAnimation();
     }
     public void LowerCooldown(float cooldown)
     {
@@ -49,6 +52,18 @@ public class PlayerInput : MonoBehaviour
     public Vector3 GetMoveDir()
     {
         return _moveDir;
+    }
+
+    private void ChangeAnimation()
+    {
+        if (_lastFaceDir == new Vector2(0, 1) || _lastFaceDir == new Vector2(0.707107f, 0.707107f) || _lastFaceDir == new Vector2(-0.707107f, 0.707107f))
+        {
+            GetComponent<SpriteRenderer>().sprite = _upSprite;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = _downSprite;
+        }
     }
 
     private void CreateProjectile()
@@ -130,7 +145,6 @@ public class PlayerInput : MonoBehaviour
         Vector2 inputVec = input.Get<Vector2>();
 
         _moveDir = new Vector2(inputVec.x, inputVec.y);
-       
     }
 
 

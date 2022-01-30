@@ -30,9 +30,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5307558687198491216}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.21977429, y: -0.06448907, z: 4.902913}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: -5977248802778204208, guid: a2ed6c6a4e24e3341b2ecf33533418d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -134,8 +134,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0976ad36631c12749a33cac2974f25ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 8
+  karma: 0
+  maxKarma: 40
+  plrAlive: 1
+  _startHealth: 6
   _iframeTime: 1
+  _projectileDamage: 1
+  _karmaText: {fileID: 0}
+  _deathScreen: {fileID: 0}
+  _pProcessingVolume: {fileID: 0}
+  _colorGrading: {fileID: 0}
+  _goodColor: {r: 1, g: 1, b: 1, a: 0}
+  _badColor: {r: 0.5566038, g: 0.22929272, b: 0.22929272, a: 0}
+  lightTheme: {fileID: 8300000, guid: c76c046e7ca135142afe32682f6ef11c, type: 3}
+  darkTheme: {fileID: 8300000, guid: 883f83866440cb349b70dd8e7493e850, type: 3}
+  NeutralTheme: {fileID: 8300000, guid: 4a5aa5341263edf459f43bec9f0b69d1, type: 3}
 --- !u!58 &5307558687198491223
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +164,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!114 &5307558687198491225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,11 +177,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b608f248c8fa6844ab8c79ccbca63dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCooldown: 0.8
+  clip: {fileID: 8300000, guid: be5dcbed5f6d5fd41a03124c07a45be0, type: 3}
   projectile: {fileID: 5439310692069959864, guid: b0ad8148b4beeea4590ded3c2e1981d7, type: 3}
   projectileDespawnTime: 2
-  attackCooldown: 0.8
   minProjectileVelocity: 800
   maxProjectileVelocity: 1000
+  _downSprite: {fileID: 5818807024574727737, guid: a2ed6c6a4e24e3341b2ecf33533418d4, type: 3}
+  _upSprite: {fileID: 4059045658030535335, guid: a2ed6c6a4e24e3341b2ecf33533418d4, type: 3}
+  _rightSprite: {fileID: -1321800111927412830, guid: a2ed6c6a4e24e3341b2ecf33533418d4, type: 3}
+  _leftSprite: {fileID: 0}
 --- !u!114 &5307558687198491224
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,15 +46,15 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        _startProjectileDamage = _projectileDamage;
+        _startAttackSpeed = GetComponent<PlayerInput>().attackCooldown;
+        _colorGrading = _pProcessingVolume.profile.GetSetting<ColorGrading>();
     }
 
     private void Start()
     {
         _plrStats = new Stats(_startHealth);
         PlayerHealthbar.instance.UpdateHealth();
-        _startProjectileDamage = _projectileDamage;
-        _startAttackSpeed = GetComponent<PlayerInput>().attackCooldown;
-        _colorGrading = _pProcessingVolume.profile.GetSetting<ColorGrading>();
         AdjustPostprocessing();
         AdjustMusic();
     }

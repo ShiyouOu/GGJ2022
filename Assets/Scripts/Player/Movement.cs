@@ -18,12 +18,16 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-
-    }
-
-    void FixedUpdate()
-    {
+        float adjustedMoveSpeed;
+        if (Player.instance.karma > 0)
+        {
+            adjustedMoveSpeed = (float)(moveSpeed + (Player.instance.karma * 0.1));
+        }
+        else
+        {
+            adjustedMoveSpeed = moveSpeed;
+        }
         Vector2 moveDir = _plrInput.GetMoveDir();
-        _rb.velocity = new Vector2(moveDir.x, moveDir.y).normalized * moveSpeed;
+        _rb.velocity = new Vector2(moveDir.x, moveDir.y).normalized * adjustedMoveSpeed;
     }
 }

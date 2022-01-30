@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spikey : MonoBehaviour
 {
+    public AudioClip clip;
+
     [SerializeField] private int dmg;
     private Collider2D _collider;
     private Rigidbody2D _rigidBody;
@@ -71,12 +73,15 @@ public class Spikey : MonoBehaviour
             Player plr = collider.gameObject.GetComponent<Player>();
             if (plr)
             {
+                SoundManager.Instance.PlayEffect(clip, transform.position);
                 plr.TakeDamage(dmg);
                 _dmgDealt = true;
             }
-            else if (collider.gameObject.layer == 6 || collider.gameObject.layer == 7 || collider.gameObject.layer == 7)
+            else if (collider.gameObject.layer == 6 || collider.gameObject.layer == 7 || collider.gameObject.layer == 11)
             {
+                SoundManager.Instance.PlayEffect(clip, transform.position);
                 Destroy(gameObject);
+
             }
         }
     }

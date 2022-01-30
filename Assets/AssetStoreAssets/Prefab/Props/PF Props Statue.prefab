@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da22d7828d7099c42a3e6f3d832f0ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 41c8013f571c36448a802b4738c26b1d, type: 3}
   _maxDurability: 10
   _loot:
     karma: -10

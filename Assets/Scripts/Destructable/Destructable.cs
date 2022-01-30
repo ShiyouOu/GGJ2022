@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour, IDamageable
 {
+    public AudioClip clip;
+
     [SerializeField] private int _maxDurability = 5;
     [SerializeField] private Loot _loot;
 
@@ -50,6 +52,7 @@ public class Destructable : MonoBehaviour, IDamageable
                 _destroyed = true;
                 _currentDurability = 0;
                 RewardPlayer();
+                SoundManager.Instance.PlayEffect(clip, transform.position);
                 Destroy(gameObject);
             }
             else

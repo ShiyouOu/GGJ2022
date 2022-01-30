@@ -118,13 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c32ece4a67a1a6449a93e908782ef7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 7fa1b03b03e2d994a90b13f009f4472c, type: 3}
+  clip: {fileID: 8300000, guid: 9ef01ede81cc0b244bea595d3b735b60, type: 3}
   target: {fileID: 0}
   speed: 1.5
   baseDamage: 2
   health: 6
   aggroDelay: 1
   timeDelayed: 0
+  _addKarmaAmount: 1
 --- !u!58 &6170648255685240952
 CircleCollider2D:
   m_ObjectHideFlags: 0

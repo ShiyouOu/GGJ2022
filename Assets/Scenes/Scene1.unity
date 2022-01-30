@@ -1494,6 +1494,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5307558687198491218, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491218, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491218, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491218, guid: be496468950e3bb4186a55dbb905f853, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1533,6 +1545,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491219, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_Size.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491219, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491219, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5977248802778204208, guid: a2ed6c6a4e24e3341b2ecf33533418d4, type: 3}
+    - target: {fileID: 5307558687198491219, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491219, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5307558687198491222, guid: be496468950e3bb4186a55dbb905f853, type: 3}
       propertyPath: startHealth
       value: 6
@@ -1545,5 +1577,21 @@ PrefabInstance:
       propertyPath: _startHealth
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491223, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491223, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491225, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: _upSprite
+      value: 
+      objectReference: {fileID: 4059045658030535335, guid: a2ed6c6a4e24e3341b2ecf33533418d4, type: 3}
+    - target: {fileID: 5307558687198491225, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: _downSprite
+      value: 
+      objectReference: {fileID: 5818807024574727737, guid: a2ed6c6a4e24e3341b2ecf33533418d4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be496468950e3bb4186a55dbb905f853, type: 3}

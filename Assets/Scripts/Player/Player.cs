@@ -8,12 +8,12 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public static Player instance;
-    public int karma; 
+    public int karma;
+    public int maxKarma = 40;
     public bool plrAlive = true;
     //public AudioClip clip; 
 
     [SerializeField] private int _startHealth;
-    [SerializeField] private int _maxKarma = 40;
     [SerializeField] private float _iframeTime = 1f;
     [SerializeField] private int _projectileDamage = 1;
     [SerializeField] private TextMeshProUGUI _karmaText;
@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     [SerializeField] private ColorGrading _colorGrading;
     [SerializeField] private Color _goodColor;
     [SerializeField] private Color _badColor;
+    [SerializeField] private AudioClip lightTheme;
+    [SerializeField] private AudioClip darkTheme;
+    [SerializeField] private AudioClip NeutralTheme;
 
     private float _timeSinceLastHit = 0f;
     private int _startProjectileDamage;
@@ -53,6 +56,7 @@ public class Player : MonoBehaviour
         _startAttackSpeed = GetComponent<PlayerInput>().attackCooldown;
         _colorGrading = _pProcessingVolume.profile.GetSetting<ColorGrading>();
         AdjustPostprocessing();
+        AdjustMusic();
     }
 
     private void Update()
@@ -67,7 +71,22 @@ public class Player : MonoBehaviour
 
     private void AdjustPostprocessing()
     {
-        _colorGrading.colorFilter.Override(Color.Lerp(_badColor, _goodColor, (float) (karma +_maxKarma) / (_maxKarma + _maxKarma)));
+        _colorGrading.colorFilter.Override(Color.Lerp(_badColor, _goodColor, (float) (karma + maxKarma) / (maxKarma + maxKarma)));
+    }
+
+    private void AdjustMusic()
+    {
+        float karmaPercent = Mathf.Lerp(0, 1, (float)(karma + maxKarma) / (maxKarma + maxKarma));
+        if(karmaPercent >= 0.75) {
+            SoundManager.Instance.PlayMusic(lightTheme);
+        }else if(karmaPercent <= 0.25)
+        {
+            SoundManager.Instance.PlayMusic(darkTheme);
+        }
+        else
+        {
+            SoundManager.Instance.PlayMusic(NeutralTheme);
+        }
     }
 
     public void RespawnPlayer()
@@ -83,6 +102,7 @@ public class Player : MonoBehaviour
         GetComponent<PlayerInput>().enabled = true;
         GetComponent<Movement>().enabled = true;
         AdjustPostprocessing();
+        AdjustMusic();
         foreach (Renderer rend in renderers)
         {
             rend.enabled = true;
@@ -134,15 +154,16 @@ public class Player : MonoBehaviour
     public void AddKarma(int addKarma)
     {
         karma += addKarma;
-        if (karma > _maxKarma)
+        if (karma > maxKarma)
         {
-            karma = _maxKarma;
+            karma = maxKarma;
         }
-        else if (karma < (-1) * _maxKarma)
+        else if (karma < (-1) * maxKarma)
         {
-            karma = ((-1) * _maxKarma);
+            karma = ((-1) * maxKarma);
         }
         AdjustPostprocessing();
+        AdjustMusic();
     }
 
     public void AddDamage(int dmg)

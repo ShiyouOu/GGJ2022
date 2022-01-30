@@ -133,7 +133,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 41c8013f571c36448a802b4738c26b1d, type: 3}
   _maxDurability: 10
   _loot:
-    karma: -10
+    karma: -15
     lootTable:
     - drop: {fileID: 8243932853154519555, guid: 0774a4fdbf7eb3640b206489961fd552, type: 3}
       minAmount: 1

@@ -18,7 +18,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
     private Collider2D _collider;
     private Stats _stats;
     private Vector3 _spawnLocation;
-    private float locationOffset = 0.02f;
+    private float locationOffset = 0.08f;
 
     private void OnEnable()
     {
@@ -31,7 +31,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
         target = GameObject.FindGameObjectWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
-        _stats = new Stats(health);
+        _stats = new Stats(health * (LevelManager.instance.GetFloorNum() + 1));
         _spawnLocation = transform.position;
     }
 
@@ -39,7 +39,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
     {  
         if((transform.position - pos).magnitude >= locationOffset)
         {
-            Vector2 velocity = new Vector2((transform.position.x - pos.x), (transform.position.y - pos.y)).normalized * speed;
+            Vector2 velocity = new Vector2((transform.position.x - pos.x), (transform.position.y - pos.y)).normalized * (float) (speed * (1 + LevelManager.instance.GetFloorNum() * 0.3));
             _rb.velocity = -velocity;
         }
         else

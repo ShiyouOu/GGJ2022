@@ -5,13 +5,13 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private int damage = 10;
-    [SerializeField] private int maxEnemiesHit = 2;
     [SerializeField] private float knockbackMod = 1;
     private int enemiesHit = 0;
     private List<GameObject> hitEnemies;
 
     private Collider2D _collider;
     private Rigidbody2D _rigidbody;
+    private int _maxEnemiesHit;
     
 
     // Start is called before the first frame update
@@ -20,6 +20,14 @@ public class Projectile : MonoBehaviour
         hitEnemies = new List<GameObject>();
         _collider = GetComponent<Collider2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        if(Player.instance.karma >= 10)
+        {
+            _maxEnemiesHit = (int)Mathf.Round(Player.instance.karma / 10);
+        }
+        else
+        {
+            _maxEnemiesHit = 1;
+        }
     }
 
     // Update is called once per frame
@@ -54,7 +62,7 @@ public class Projectile : MonoBehaviour
                         collider.gameObject.GetComponent<Rigidbody2D>().AddForce(_rigidbody.velocity * knockbackMod);
                     }
                     enemiesHit++;
-                    if (enemiesHit >= maxEnemiesHit)
+                    if (enemiesHit >= _maxEnemiesHit)
                     {
                         Destroy(gameObject);
                         break;

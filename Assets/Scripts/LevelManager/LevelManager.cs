@@ -129,6 +129,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public int GetFloorNum()
+    {
+        return _currentFloorLevel;
+    }
+
     public void LoadFloor()
     {
         ClearRooms();

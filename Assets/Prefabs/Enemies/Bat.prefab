@@ -122,10 +122,10 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 2
   baseDamage: 1
-  health: 2
+  health: 1
   aggroDelay: 1
   timeDelayed: 0
-  _addKarmaAmount: 0
+  _addKarmaAmount: 1
 --- !u!58 &7725732531354084693
 CircleCollider2D:
   m_ObjectHideFlags: 0

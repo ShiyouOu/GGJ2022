@@ -152,10 +152,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4a5aa5341263edf459f43bec9f0b69d1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -279,7 +279,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaede230ac28a454eae1d3187a8e9c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toggleMusic: 0
+  _toggleMusic: 1
   _toggleEffects: 0
 --- !u!114 &480179074
 MonoBehaviour:
@@ -2319,9 +2319,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5307558687198491222, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: darkTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 883f83866440cb349b70dd8e7493e850, type: 3}
+    - target: {fileID: 5307558687198491222, guid: be496468950e3bb4186a55dbb905f853, type: 3}
       propertyPath: _karmaText
       value: 
       objectReference: {fileID: 1412154620}
+    - target: {fileID: 5307558687198491222, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: lightTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: c76c046e7ca135142afe32682f6ef11c, type: 3}
     - target: {fileID: 5307558687198491222, guid: be496468950e3bb4186a55dbb905f853, type: 3}
       propertyPath: _badColor.b
       value: 0.22929272
@@ -2338,6 +2346,10 @@ PrefabInstance:
       propertyPath: startHealth
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491222, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: NeutralTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a5aa5341263edf459f43bec9f0b69d1, type: 3}
     - target: {fileID: 5307558687198491222, guid: be496468950e3bb4186a55dbb905f853, type: 3}
       propertyPath: _deathScreen
       value: 

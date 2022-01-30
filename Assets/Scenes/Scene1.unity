@@ -802,7 +802,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
-  m_sharedMaterial: {fileID: -3338868229979580769, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
+  m_sharedMaterial: {fileID: 2070051119089485947, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -963,10 +963,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NextLevel
+  m_text: Next Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
-  m_sharedMaterial: {fileID: -3338868229979580769, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
+  m_sharedMaterial: {fileID: 2070051119089485947, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_text: Restart?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
-  m_sharedMaterial: {fileID: -3338868229979580769, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
+  m_sharedMaterial: {fileID: 2070051119089485947, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1444,7 +1444,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
-  m_sharedMaterial: {fileID: -3338868229979580769, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
+  m_sharedMaterial: {fileID: 2070051119089485947, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   m_text: YOU DIED
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
-  m_sharedMaterial: {fileID: -3338868229979580769, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
+  m_sharedMaterial: {fileID: 2070051119089485947, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2135,7 +2135,7 @@ MonoBehaviour:
   m_text: You Beat This Level!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
-  m_sharedMaterial: {fileID: -3338868229979580769, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
+  m_sharedMaterial: {fileID: 2070051119089485947, guid: d8ec14d658e6e7147a570c43dae161ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

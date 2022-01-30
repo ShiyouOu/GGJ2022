@@ -6,7 +6,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private int damage = 10;
     [SerializeField] private int maxEnemiesHit = 2;
-    private int enemiesHit = 0; 
+    private int enemiesHit = 0;
+    private List<GameObject> hitEnemies;
 
     private Collider2D _collider;
     
@@ -14,6 +15,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hitEnemies = new List<GameObject>();
         _collider = GetComponent<Collider2D>();
     }
 
@@ -22,6 +24,7 @@ public class Projectile : MonoBehaviour
     {
         CheckHit();
     }
+
 
     private void CheckHit()
     {
@@ -35,12 +38,16 @@ public class Projectile : MonoBehaviour
             IDamageable dmgAble = collider.gameObject.GetComponent<IDamageable>();
             if (dmgAble != null)
             {
-                dmgAble.TakeDamage(damage);
-                enemiesHit ++; 
-                if (enemiesHit >= maxEnemiesHit)
+                if (!hitEnemies.Contains(collider.gameObject))
                 {
-                    Destroy(gameObject);
-                    break;
+                    hitEnemies.Add(collider.gameObject);
+                    dmgAble.TakeDamage(damage);
+                    enemiesHit++;
+                    if (enemiesHit >= maxEnemiesHit)
+                    {
+                        Destroy(gameObject);
+                        break;
+                    }
                 }
             }
             else if (collider.gameObject.layer == 6 || collider.gameObject.layer == 7)

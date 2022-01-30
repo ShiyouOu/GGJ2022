@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2055102311959635375}
   - component: {fileID: 2055102311959635368}
   - component: {fileID: 2055102311959635374}
+  - component: {fileID: -6566033805932378526}
   m_Layer: 7
   m_Name: PF Props Gravestone B
   m_TagString: Untagged
@@ -110,6 +111,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74995446, y: 0.36239362}
   m_EdgeRadius: 0
+--- !u!114 &-6566033805932378526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055102311959635369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da22d7828d7099c42a3e6f3d832f0ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxDurability: 2
+  _loot:
+    karma: -2
+    lootTable:
+    - drop: {fileID: 8243932853154519555, guid: 0774a4fdbf7eb3640b206489961fd552, type: 3}
+      minAmount: 1
+      maxAmount: 1
+      chanceNum: 1
+      chanceDenom: 10
+    - drop: {fileID: 5042297242120059969, guid: adc8b09a0cbfc8841af4709732235e2b, type: 3}
+      minAmount: 1
+      maxAmount: 1
+      chanceNum: 1
+      chanceDenom: 5
 --- !u!1 &2055102312182832482
 GameObject:
   m_ObjectHideFlags: 0

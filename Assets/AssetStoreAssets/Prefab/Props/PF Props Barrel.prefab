@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2055102311959635368}
   - component: {fileID: 5890802837618066405}
   - component: {fileID: 10145298200545765}
+  - component: {fileID: -1939571713800208160}
   m_Layer: 7
   m_Name: PF Props Barrel
   m_TagString: Untagged
@@ -137,6 +138,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-1939571713800208160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055102311959635369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da22d7828d7099c42a3e6f3d832f0ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxDurability: 2
+  _loot:
+    karma: 0
+    lootTable:
+    - drop: {fileID: 6556942946149300449, guid: 1d505550b2293594a8ae89e1fa04ee07, type: 3}
+      minAmount: 1
+      maxAmount: 1
+      chanceNum: 1
+      chanceDenom: 20
+    - drop: {fileID: 6556942946149300449, guid: 1d505550b2293594a8ae89e1fa04ee07, type: 3}
+      minAmount: 1
+      maxAmount: 1
+      chanceNum: 1
+      chanceDenom: 1
 --- !u!1 &2055102312182832482
 GameObject:
   m_ObjectHideFlags: 0

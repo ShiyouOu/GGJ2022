@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     {
         plrAlive = true;
         _plrStats = new Stats(_startHealth);
+        karma = 0;
         PlayerHealthbar.instance.UpdateHealth();
         _deathScreen.SetActive(false);
         Renderer[] renderers = GetComponentsInChildren<Renderer>();

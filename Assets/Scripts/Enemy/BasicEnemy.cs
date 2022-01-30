@@ -12,6 +12,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
     [SerializeField] private int health;
     [SerializeField] private float aggroDelay = 1f;
     [SerializeField] private float timeDelayed = 0f;
+    [SerializeField] private int _addKarmaAmount = 1;
 
     private Rigidbody2D _rb;
     private Collider2D _collider;
@@ -74,6 +75,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
             _stats.currentHP = 0;
             SoundManager.Instance.PlayEffect(clip, transform.position);
             Destroy(gameObject);
+            Player.instance.AddKarma(_addKarmaAmount);
         }
         else
         {

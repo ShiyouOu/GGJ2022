@@ -180,6 +180,11 @@ public class LevelManager : MonoBehaviour
         _currentFloorLevel = num;
     }
 
+    public GameObject GetActiveFloor()
+    {
+        return _roomsClone[_currentRoomIndex];
+    }
+
     private void Awake()
     {
         instance = this;

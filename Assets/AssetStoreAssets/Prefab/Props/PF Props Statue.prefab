@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7947911505737750448}
   - component: {fileID: 7947911505737750450}
   - component: {fileID: 5391186442010338111}
+  - component: {fileID: 8298445336251486518}
   m_Layer: 7
   m_Name: PF Props Statue
   m_TagString: Untagged
@@ -117,6 +118,32 @@ PolygonCollider2D:
       - {x: 0.5397376, y: 0.12529735}
       - {x: 0.5414568, y: 0.5411497}
       - {x: 0.36662203, y: 0.6466654}
+--- !u!114 &8298445336251486518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7947911505737750455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da22d7828d7099c42a3e6f3d832f0ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxDurability: 10
+  _loot:
+    karma: -10
+    lootTable:
+    - drop: {fileID: 8243932853154519555, guid: 0774a4fdbf7eb3640b206489961fd552, type: 3}
+      minAmount: 1
+      maxAmount: 1
+      chanceNum: 1
+      chanceDenom: 1
+    - drop: {fileID: 5042297242120059969, guid: adc8b09a0cbfc8841af4709732235e2b, type: 3}
+      minAmount: 2
+      maxAmount: 2
+      chanceNum: 1
+      chanceDenom: 1
 --- !u!1 &7947911505844789836
 GameObject:
   m_ObjectHideFlags: 0

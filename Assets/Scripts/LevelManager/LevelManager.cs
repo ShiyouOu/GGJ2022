@@ -120,6 +120,7 @@ public class LevelManager : MonoBehaviour
 
     private void ClearRooms()
     {
+        if(_roomsClone == null){ return; }
         foreach(GameObject roomObj in _roomsClone)
         {
             Destroy(roomObj);
@@ -128,9 +129,9 @@ public class LevelManager : MonoBehaviour
 
     public void LoadFloor(int floorNum)
     {
+        ClearRooms();
         _roomObjects = new List<RoomObject>();
         _roomsClone = new List<GameObject>();
-        ClearRooms();
 
         // Picks random rooms for each section of the floor
         foreach (FloorRoom floorRoom in _floors[_currentFloorLevel].rooms)
@@ -148,6 +149,8 @@ public class LevelManager : MonoBehaviour
         }
         // Set the main floor to active
         _roomsClone[0].SetActive(true);
+        Player.instance.RespawnPlayer();
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 0, 12);
         _currentRoomIndex = 0;
     }
 

@@ -13,13 +13,14 @@ public enum FacingDirection
 public class Player : MonoBehaviour
 {
     public static Player instance;
+    public bool plrAlive = true;
 
-    [SerializeField] int startHealth;
+    [SerializeField] int _startHealth;
     [SerializeField] private float _iframeTime = 1f;
+    [SerializeField] private GameObject _deathScreen;
     private float _timeSinceLastHit = 0f;
 
     private Stats _plrStats;
-    private bool _plrAlive = true;
     private FacingDirection _plrDirection = FacingDirection.Down;
 
     private void Awake()
@@ -29,13 +30,26 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _plrStats = new Stats(startHealth);
+        _plrStats = new Stats(_startHealth);
         PlayerHealthbar.instance.UpdateHealth();
     }
 
     private void Update()
     {
         _timeSinceLastHit += Time.deltaTime;
+    }
+
+    public void RespawnPlayer()
+    {
+        plrAlive = true;
+        _plrStats = new Stats(_startHealth);
+        PlayerHealthbar.instance.UpdateHealth();
+        _deathScreen.SetActive(false);
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in renderers)
+        {
+            rend.enabled = true;
+        }
     }
 
     public void TakeDamage(int dmg)
@@ -49,9 +63,13 @@ public class Player : MonoBehaviour
         if (dmg >= _plrStats.currentHP)
         {
             _plrStats.currentHP = 0;
-            _plrAlive = false;
-            //deathScreen.SetActive(true);
-            Destroy(gameObject);
+            plrAlive = false;
+            _deathScreen.SetActive(true);
+            Renderer[] renderers = GetComponentsInChildren<Renderer>();
+            foreach (Renderer rend in renderers)
+            {
+                rend.enabled = false;
+            }
         }
         else
         {

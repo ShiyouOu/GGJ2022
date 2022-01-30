@@ -51,7 +51,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
         timeDelayed += Time.deltaTime;
         if (timeDelayed < aggroDelay) { return; }
 
-        if (target)
+        if (target && target.GetComponent<Player>().plrAlive)
         {
             MoveToLocation(target.transform.position);
             CheckHit();

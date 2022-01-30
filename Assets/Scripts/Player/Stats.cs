@@ -28,7 +28,14 @@ public class Stats
         }
         set
         {
-            _currentHP = value;
+            if(value > maxHP)
+            {
+                _currentHP = maxHP;
+            }
+            else
+            {
+                _currentHP = value;
+            }
         }
     }
     public int armor

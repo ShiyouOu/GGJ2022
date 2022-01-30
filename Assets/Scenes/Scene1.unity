@@ -1090,10 +1090,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
   - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
-  - {fileID: 11400000, guid: a9b4e9bb3d7b0b64fb3c0ad6067ccd36, type: 2}
   _roomsPool:
   - {fileID: 11400000, guid: 5e28189765e3a7842875af0c543781d5, type: 2}
   - {fileID: 11400000, guid: a10f15e68b3f65a4d8c4074b1b97b671, type: 2}
@@ -1322,6 +1318,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 877449245}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: SetFloorLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 877449245}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LoadFloor

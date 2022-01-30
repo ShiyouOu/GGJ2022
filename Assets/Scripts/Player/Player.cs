@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
         PlayerHealthbar.instance.UpdateHealth();
         _deathScreen.SetActive(false);
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        GetComponent<PlayerInput>().enabled = true;
+        GetComponent<Movement>().enabled = true;
         foreach (Renderer rend in renderers)
         {
             rend.enabled = true;
@@ -87,6 +89,8 @@ public class Player : MonoBehaviour
             plrAlive = false;
             _deathScreen.SetActive(true);
             Renderer[] renderers = GetComponentsInChildren<Renderer>();
+            GetComponent<PlayerInput>().enabled = false;
+            GetComponent<Movement>().enabled = false;
             foreach (Renderer rend in renderers)
             {
                 rend.enabled = false;

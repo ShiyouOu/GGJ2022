@@ -151,6 +151,19 @@ public class LevelManager : MonoBehaviour
         _currentRoomIndex = 0;
     }
 
+    public void NextFloor()
+    {
+        if(_currentFloorLevel < _floors.Count)
+        {
+            _currentFloorLevel++;
+            LoadFloor(_currentFloorLevel);
+        }
+        else
+        {
+            LoadFloor(_currentFloorLevel);
+        }
+    }
+
     private void Awake()
     {
         instance = this;

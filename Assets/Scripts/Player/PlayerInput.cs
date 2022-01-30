@@ -141,22 +141,22 @@ public class PlayerInput : MonoBehaviour
     }
 
     // THis no worky but we lazy
-    public void OnShove()
-    {
-        Collider2D[] results = new Collider2D[5];
-        Physics2D.OverlapBox(transform.position, new Vector2(5f,5f), 0f, new ContactFilter2D(), results);
-        foreach (Collider2D collider in results)
-        {
-            if (collider == null)
-            {
-                break;
-            }
-            if (collider.gameObject.GetComponent<BasicEnemy>())
-            {
-                collider.gameObject.GetComponent<Rigidbody2D>().AddForce(_lastFaceDir  * 5000);
-            }
-        }
-    }
+    //public void OnShove()
+    //{
+    //    Collider2D[] results = new Collider2D[5];
+    //    Physics2D.OverlapBox(transform.position, new Vector2(5f,5f), 0f, new ContactFilter2D(), results);
+    //    foreach (Collider2D collider in results)
+    //    {
+    //        if (collider == null)
+    //        {
+    //            break;
+    //        }
+    //        if (collider.gameObject.GetComponent<BasicEnemy>())
+    //        {
+    //            collider.gameObject.GetComponent<Rigidbody2D>().AddForce(_lastFaceDir  * 5000);
+    //        }
+    //    }
+    //}
 
     public void OnMove(InputValue input)
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LevelManager : MonoBehaviour
     // Am feelin lazy temp solution just for testing
     [SerializeField] private List<FloorObject> _floors;
     [SerializeField] private List<RoomObject> _roomsPool;
+    [SerializeField] private GameObject _nextLevelScreen;
+    [SerializeField] private TextMeshProUGUI _levelLabel;
 
     [SerializeField] GameObject EnvironmentGroup;
 
@@ -127,7 +130,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void LoadFloor(int floorNum)
+    public void LoadFloor()
     {
         ClearRooms();
         _roomObjects = new List<RoomObject>();
@@ -152,18 +155,20 @@ public class LevelManager : MonoBehaviour
         Player.instance.RespawnPlayer();
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0, 0, 12);
         _currentRoomIndex = 0;
+        _levelLabel.SetText("Level: " + (_currentFloorLevel + 1));
     }
 
     public void NextFloor()
     {
-        if(_currentFloorLevel < _floors.Count)
+        _nextLevelScreen.SetActive(false);
+        if (_currentFloorLevel <= _floors.Count)
         {
             _currentFloorLevel++;
-            LoadFloor(_currentFloorLevel);
+            LoadFloor();
         }
         else
         {
-            LoadFloor(_currentFloorLevel);
+            LoadFloor();
         }
     }
 
@@ -175,12 +180,22 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadFloor(_currentFloorLevel);
+        LoadFloor();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(_currentRoomIndex == _roomObjects.Count - 1)
+        {
+            BasicEnemy enemy = _roomsClone[_currentRoomIndex].GetComponentInChildren<BasicEnemy>();
+            if (!enemy)
+            {
+                if (!_nextLevelScreen.activeSelf)
+                {
+                    _nextLevelScreen.SetActive(true);
+                }
+            }
+        }
     }
 }

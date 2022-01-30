@@ -13,6 +13,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float maxProjectileVelocity = 500;
     [SerializeField] private Sprite _downSprite;
     [SerializeField] private Sprite _upSprite;
+    [SerializeField] private Sprite _rightSprite;
+    [SerializeField] private Sprite _leftSprite;
 
     private float _timeSinceLastProjectile = 0f;
     private Vector2 _moveDir;
@@ -40,10 +42,12 @@ public class PlayerInput : MonoBehaviour
         }
         ChangeAnimation();
     }
+
     public void LowerCooldown(float cooldown)
     {
         attackCooldown -= cooldown;
     }
+
     public void AddCooldown(float cooldown)
     {
 
@@ -56,11 +60,21 @@ public class PlayerInput : MonoBehaviour
 
     private void ChangeAnimation()
     {
+        GetComponent<SpriteRenderer>().flipX = false;
         if (_lastFaceDir == new Vector2(0, 1) || _lastFaceDir == new Vector2(0.707107f, 0.707107f) || _lastFaceDir == new Vector2(-0.707107f, 0.707107f))
         {
             GetComponent<SpriteRenderer>().sprite = _upSprite;
         }
-        else
+        else if (_lastFaceDir == new Vector2(-1, 0))
+        {
+            GetComponent<SpriteRenderer>().sprite = _rightSprite;
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (_lastFaceDir == new Vector2(1, 0))
+        {
+            GetComponent<SpriteRenderer>().sprite = _rightSprite;
+        }
+        else 
         {
             GetComponent<SpriteRenderer>().sprite = _downSprite;
         }
@@ -113,6 +127,7 @@ public class PlayerInput : MonoBehaviour
         Destroy(newProjectile, projectileDespawnTime);
     }
 
+    // player attack
     public void OnAttack(InputValue input)
     {
         Vector2 inputVec = input.Get<Vector2>();
@@ -123,6 +138,7 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    // THis no worky but we lazy
     public void OnShove()
     {
         Collider2D[] results = new Collider2D[5];

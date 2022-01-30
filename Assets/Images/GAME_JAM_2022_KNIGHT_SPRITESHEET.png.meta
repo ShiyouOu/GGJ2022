@@ -20,6 +20,15 @@ TextureImporter:
   - first:
       213: 2546715830757127214
     second: GAME_JAM_2022_KNIGHT_SPRITESHEET_5
+  - first:
+      213: -1321800111927412830
+    second: GAME_JAM_2022_KNIGHT_SPRITESHEET_6
+  - first:
+      213: 349653873021908615
+    second: GAME_JAM_2022_KNIGHT_SPRITESHEET_7
+  - first:
+      213: 2101559045306178920
+    second: GAME_JAM_2022_KNIGHT_SPRITESHEET_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -230,6 +239,69 @@ TextureImporter:
       bones: []
       spriteID: e2474241e80c75320800000000000000
       internalID: 2546715830757127214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAME_JAM_2022_KNIGHT_SPRITESHEET_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7be782dc508ade0800000000000000
+      internalID: -1321800111927412830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAME_JAM_2022_KNIGHT_SPRITESHEET_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7867fcf48583ad400800000000000000
+      internalID: 349653873021908615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GAME_JAM_2022_KNIGHT_SPRITESHEET_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ddbf131dc3a2d10800000000000000
+      internalID: 2101559045306178920
       vertices: []
       indices: 
       edges: []

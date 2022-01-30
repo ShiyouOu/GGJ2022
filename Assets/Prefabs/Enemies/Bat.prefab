@@ -125,7 +125,7 @@ MonoBehaviour:
   health: 2
   aggroDelay: 1
   timeDelayed: 0
-  _addKarmaAmount: 1
+  _addKarmaAmount: 0
 --- !u!58 &7725732531354084693
 CircleCollider2D:
   m_ObjectHideFlags: 0

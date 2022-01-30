@@ -116,7 +116,6 @@ public class LevelManager : MonoBehaviour
                 roomsTypePool.Add(roomObj);
             }
         }
-        print(roomsTypePool.Count);
         RoomObject randomRoom = roomsTypePool[Random.Range(0, roomsTypePool.Count)];
         return randomRoom;
     }

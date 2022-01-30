@@ -34,8 +34,6 @@ public class Destructable : MonoBehaviour, IDamageable
             if (TestLuck(loot.chanceNum, loot.chanceDenom))
             {
                 GameObject newObj = Instantiate<GameObject>(loot.drop.gameObject);
-                Rigidbody rb = newObj.AddComponent<Rigidbody>();
-                BoxCollider col = newObj.AddComponent<BoxCollider>();
                 newObj.transform.position = gameObject.transform.position;
                 newObj.transform.SetParent(LevelManager.instance.GetActiveFloor().transform);
             }
@@ -44,7 +42,6 @@ public class Destructable : MonoBehaviour, IDamageable
 
     public void TakeDamage(int dmg)
     {
-        print("hit " + gameObject.name);
         if (!_destroyed)
         {
             if (dmg >= _currentDurability)

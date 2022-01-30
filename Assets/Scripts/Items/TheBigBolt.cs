@@ -20,7 +20,7 @@ public class TheBigBolt : MonoBehaviour
             Player plr = collider.gameObject.GetComponent<Player>();
             if (plr)
             {
-                plr.gameObject.GetComponent<Player>().LowerKarma(_karmaMod);
+                plr.gameObject.GetComponent<Player>().AddKarma(_karmaMod);
                 plr.gameObject.GetComponent<Player>().AddDamage(_damageMod);
 
                 Destroy(gameObject);

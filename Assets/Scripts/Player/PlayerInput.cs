@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
     public float attackCooldown = 0.3f;
+    public AudioClip clip; 
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectileDespawnTime = 2f;
@@ -124,6 +125,7 @@ public class PlayerInput : MonoBehaviour
 
         newProjectile.GetComponent<Rigidbody2D>().AddForce(_faceDir * Random.Range(minProjectileVelocity, maxProjectileVelocity));
         _timeSinceLastProjectile = 0f;
+        SoundManager.Instance.PlayEffect(clip, transform.position);
         Destroy(newProjectile, projectileDespawnTime);
     }
 

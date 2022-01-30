@@ -115,7 +115,6 @@ public class Player : MonoBehaviour
         _plrStats.currentHP += numHealth;
         PlayerHealthbar.instance.UpdateHealth();        
     }
-  
     public void LowerKarma(int lowerKarma)
     {
         karma -= lowerKarma;

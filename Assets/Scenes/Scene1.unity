@@ -155,7 +155,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -2325,6 +2325,14 @@ PrefabInstance:
     - target: {fileID: 5307558687198491223, guid: be496468950e3bb4186a55dbb905f853, type: 3}
       propertyPath: m_Offset.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307558687198491225, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: be5dcbed5f6d5fd41a03124c07a45be0, type: 3}
+    - target: {fileID: 5307558687198491225, guid: be496468950e3bb4186a55dbb905f853, type: 3}
+      propertyPath: source
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5307558687198491225, guid: be496468950e3bb4186a55dbb905f853, type: 3}
       propertyPath: _upSprite

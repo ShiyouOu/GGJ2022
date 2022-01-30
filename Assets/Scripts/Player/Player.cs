@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     private float _timeSinceLastHit = 0f;
     private int _startProjectileDamage;
+    private float _startAttackSpeed;
     private Stats _plrStats;
     private FacingDirection _plrDirection = FacingDirection.Down;
 
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
         _plrStats = new Stats(_startHealth);
         PlayerHealthbar.instance.UpdateHealth();
         _startProjectileDamage = _projectileDamage;
+        _startAttackSpeed = GetComponent<PlayerInput>().attackCooldown;
     }
 
     private void Update()
@@ -69,6 +71,7 @@ public class Player : MonoBehaviour
         _plrStats = new Stats(_startHealth);
         karma = 0;
         _projectileDamage = _startProjectileDamage;
+        GetComponent<PlayerInput>().attackCooldown = _startAttackSpeed;
         PlayerHealthbar.instance.UpdateHealth();
         _deathScreen.SetActive(false);
         Renderer[] renderers = GetComponentsInChildren<Renderer>();

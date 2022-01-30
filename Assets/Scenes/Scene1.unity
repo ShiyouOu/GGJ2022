@@ -1098,6 +1098,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9069dd6c04ccbbb4f8ac6ad8f1554509, type: 2}
   - {fileID: 11400000, guid: 32906b322a1e4d04f9254d859fa5484d, type: 2}
   - {fileID: 11400000, guid: bd53f593041fc5445a056f19f6308e3c, type: 2}
+  - {fileID: 11400000, guid: dc9d42cb2cb983446a43473ef15cc850, type: 2}
+  - {fileID: 11400000, guid: c766100f28aaf894a9c0adbdab30b710, type: 2}
   _nextLevelScreen: {fileID: 336383369}
   _levelLabel: {fileID: 804620194}
   EnvironmentGroup: {fileID: 205971690}

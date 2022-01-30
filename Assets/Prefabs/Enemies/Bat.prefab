@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c32ece4a67a1a6449a93e908782ef7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 7fa1b03b03e2d994a90b13f009f4472c, type: 3}
   target: {fileID: 0}
   speed: 2
   baseDamage: 1

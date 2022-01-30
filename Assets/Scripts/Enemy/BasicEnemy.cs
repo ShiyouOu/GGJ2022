@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour, IDamageable
 {
+    public AudioClip clip; 
+
     [SerializeField] private GameObject target;
     [SerializeField] private float speed;
     [SerializeField] private int baseDamage;
@@ -70,6 +72,7 @@ public class BasicEnemy : MonoBehaviour, IDamageable
         if (dmg >= _stats.currentHP)
         {
             _stats.currentHP = 0;
+            SoundManager.Instance.PlayEffect(clip, transform.position);
             Destroy(gameObject);
         }
         else
